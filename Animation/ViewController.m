@@ -32,6 +32,7 @@
 static CGFloat sunViewWH = 150;
 static CGFloat carWidth = 50;
 
+#pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // set backgroudColor
@@ -45,16 +46,14 @@ static CGFloat carWidth = 50;
     [self.view addSubview:self.cloudImageView];
     [self.view insertSubview:self.houseImageView belowSubview:self.treeImageView];
     [self.view insertSubview:self.carImageView aboveSubview:self.houseImageView];
-    
 }
 
-#pragma mark - event response
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (void)viewDidAppear:(BOOL)animated {
     [self startAnimation];
     
-    //set self.view' user interaction to NO
-    self.view.userInteractionEnabled = NO;
+    [super viewDidAppear:animated];
+    
+
 }
 
 #pragma mark - private method
